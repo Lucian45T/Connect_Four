@@ -15,8 +15,8 @@ function generateGrid() {
             for (let j = 0; j < 7; ++j) {
                 ++saved;
                 document.getElementById("container").innerHTML += `
-                <button type="button" class="my-button" class="btn btn-outline-primary" 
-                    onclick ="pushButton(${saved}), fourElements(), checkWinner()" id="${saved}">push</button> `; 
+                    <button type="button" class="my-button" class="btn btn-outline-primary" 
+                        onclick ="pushButton(${saved}), fourElements(), checkWinner()" id="${saved}">push</button> `; 
               
             } 
             document.getElementById("container").innerHTML += `<br>`;
@@ -25,7 +25,7 @@ function generateGrid() {
     }
 }   
 
-function setList(elementId, classList) {
+function setClass(elementId, classList) {
     let i = Math.floor((elementId - 1) / 7);
     let j = (elementId - 1) % 7;
     grid[i][j] = classList; 
@@ -35,12 +35,12 @@ function pushButton(elementId) {
     ++verify;
     if ((verify % 2 != 0) && document.getElementById(elementId).classList.contains("my-button") && finishGame == 0) {
         document.getElementById(elementId).classList.add("btn-danger");
-        setList(elementId, "btn-danger");        
+        setClass(elementId, "btn-danger");        
     }
     
     if ((verify % 2 == 0) && document.getElementById(elementId).classList.contains("my-button") && finishGame == 0) {
         document.getElementById(elementId).classList.add("btn-warning");   
-        setList(elementId, "btn-warning");           
+        setClass(elementId, "btn-warning");           
     }    
 } 
 
