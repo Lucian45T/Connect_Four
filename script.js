@@ -48,7 +48,7 @@ function increment(i, j) {
     return (i >= 0 && i < 6 && j >= 0 && j < 7);
 }
 
-function Count(value, i1, j1, di, dj) {
+function countElements(value, i1, j1, di, dj) {
     let count = 0;
     while (increment(i1, j1) && count < 4 && grid[i1][j1] === value) {
         i1 += di;
@@ -62,10 +62,10 @@ function fourElements(value) {
     for (let i = 0; i < 6; ++i) {
         for (let j = 0; j < 7; ++j) {
             if (grid[i][j] === value) {
-                if (Count(value, i, j, 0, 1) == 4) return true;   
-                if (Count(value, i, j, 1, 0) == 4) return true;  
-                if (Count(value, i, j, 1, 1) == 4) return true;   
-                if (Count(value, i, j, 1, -1) == 4) return true;  
+                if (countElements(value, i, j, 0, 1) == 4) return true;   
+                if (countElements(value, i, j, 1, 0) == 4) return true;  
+                if (countElements(value, i, j, 1, 1) == 4) return true;   
+                if (countElements(value, i, j, 1, -1) == 4) return true;  
             }
         }
     }
